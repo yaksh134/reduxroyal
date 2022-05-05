@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { CartComponent } from './CartComponent'
+
 
 export const HomeComponent = (props) => {
   console.log("props : ",props)
   console.log("lenght : ",props.cartData.cartData.length)
+
+  const [state, setstate] = useState(false)
+
+  
+
+  
   return (
     
     <div>
       Number of Product in Cart : {props.cartData.cartData.length}  
         <div class="row">
         <div class="col-sm-6">
-        <div class="card" style={{width: "18rem"}}>
+        <div class="card" style={{width: "20rem"}}>
         <img class="card-img-top" src="data:image/webp;base64,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" alt="Card image cap"/>
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">iPhone 13 pro Max</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             
             <button class="btn btn-primary" onClick={()=>props.addToCartHandler({productName : "iPhone 13 pro max",price : 120000})}>Add to cart</button>
@@ -34,6 +43,14 @@ export const HomeComponent = (props) => {
         </div>
         </div>
         </div>
+
+        
+
+        <Link to={'/Listproducts'}>See Cart</Link>
+
+        
+
+        
     </div>
   )
 }

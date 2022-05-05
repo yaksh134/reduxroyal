@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { CartComponent } from "../components/CartComponent";
 import { HomeComponent } from "../components/HomeComponent";
 import { addToCart } from "../services/actions/Action";
 import { removeFromCart } from "../services/actions/Action";
@@ -12,4 +13,7 @@ const mapDispatchToProps = dispatch =>({
     removeFromCartHandler:product=>dispatch(removeFromCart(product))
     
 })
-export default connect(mapStateToProps,mapDispatchToProps)(HomeComponent);
+export default {
+    AddProduct : connect(mapStateToProps,mapDispatchToProps)(HomeComponent),
+    ListProduct : connect(mapStateToProps,mapDispatchToProps)(CartComponent)
+}
