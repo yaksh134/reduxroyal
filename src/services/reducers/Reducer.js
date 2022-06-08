@@ -1,3 +1,5 @@
+import { addToCartExam } from "../actions/Action"
+
 export default function cartData(state=[],action){
     switch(action.type){
         case "AddToCart":
@@ -49,7 +51,18 @@ export default function cartData(state=[],action){
             }
             //state.pop();
             return [...state]
+
+        case "AddToCartExam":
+            console.log("state " , state)
+            console.log("action ",action.product)
+            return[...state,action.product]
+
         default : 
             return state
+            
+
+
+
+            
     }
 }

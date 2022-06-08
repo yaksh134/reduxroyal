@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import cartData from '../services/reducers/Reducer'
 
 export const CartComponent = (props) => {
@@ -56,6 +57,9 @@ export const CartComponent = (props) => {
       
     </tbody>
   </table>
+
+  <button className='btn btn-warning'><Link to={'/'}>Back To Home Page</Link></button>
+  
 
 
 

@@ -15,3 +15,10 @@ export const removeFromCart = (product)=>{
         product : product
     }
 }
+
+export const addToCartExam = (product) =>{
+    return{
+        type : "AddToCartExam",
+        product : product
+    }
+}
